@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on HUYING42</title>
+    <link>http://www.huying42.com/page/</link>
+    <description>Recent content in Pages on HUYING42</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 04 Aug 2016 15:47:22 +0800</lastBuildDate>
+    <atom:link href="http://www.huying42.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>contact</title>
+      <link>http://www.huying42.com/contact/</link>
+      <pubDate>Thu, 04 Aug 2016 15:47:22 +0800</pubDate>
+      
+      <guid>http://www.huying42.com/contact/</guid>
+      <description>&lt;p&gt;Email: huying_42@163.com&lt;huying_42@163.com&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://www.huying42.com/about/</link>
+      <pubDate>Thu, 04 Aug 2016 09:44:13 +0800</pubDate>
+      
+      <guid>http://www.huying42.com/about/</guid>
+      <description>&lt;p&gt;我是一个电子攻城狮。&lt;/p&gt;
+
+&lt;p&gt;创新于各种器件的损坏。&lt;/p&gt;
+
+&lt;p&gt;精通于各种datasheet的打印。&lt;/p&gt;
+
+&lt;p&gt;熟练于各种EDA软件的装卸。&lt;/p&gt;
+
+&lt;p&gt;擅长于各种多种编程语言的拼写。&lt;/p&gt;
+
+&lt;p&gt;爱好于各种作古仪器的高买低卖。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

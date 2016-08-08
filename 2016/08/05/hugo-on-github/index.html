@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/images/icon.png"> 
+<meta name="generator" content="Hugo 0.16" />
+
+
+<title>Hugo On github - HUYING42</title>
+<meta property="og:title" content="Hugo On github - HUYING42">
+
+
+
+  
+  <meta property="description" content="在github上用Hugo搭建静态博客">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="http://www.huying42.com/css/main.css" media="all">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400|Lato:400,400italic,700">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="http://www.huying42.com/" class="nav-logo"><img src="http://www.huying42.com/images/icon.png" width="50" height="50"></a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/contact/">Contact</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Hugo On github</h1>
+
+    
+    <span class="article-date">August 8, 2016</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="在github上用hugo搭建静态博客">在github上用Hugo搭建静态博客</h2>
+
+<p>在github pages上放置静态blog有很多好处，免费、采用git更新、使用人多。github官方文档上用jekyll搭建静态网页举例，gem那套有点烦，近喜golang，采用了Hugo+github的方式搭建这个blog。</p>
+
+<h3 id="1-使用hugo产生静态网页">1. 使用hugo产生静态网页</h3>
+
+<p>用了两天的hugo，比较对我的使用习惯，golang的template很容易上手，尤其棒的一点是可以live editing，改了配置，更新了内容hugo都可以自动更新输出。</p>
+
+<p>Hugo的文档有点不一样。很多开源项目为了展示简单易用，在quickstart里面的惯用伎俩就是放命令行，越简单越牛逼，enter，铛铛当，a new world。 看Hugo文档写的，先放一个命令，有效果没，咦，没有，看下一个命令，咦，还没有，再看下一个，不知不觉我仔细看完了整个文档。这种丢包袱的文档写法简直为读者所不齿，不过我下次写文档，也要这么写。</p>
+
+<p><a href="https://github.com/spf13/hugo/releases/">Hugo的安装包</a>基本覆盖了全平台。</p>
+
+<p>使用流程：</p>
+
+<pre><code># hugo new site blog           //建立hugo项目目录结构
+# hugo new content\post.md     //建立post。一定要从hugo命令行这里建立新的post，我尝试直接在content目录下建立post.md，时间显示混乱。
+# hugo new server              //这之前要装好theme，在configure.toml里指明theme，否则使用hugo new server -t theme-name
+# hugo                         //产生public目录
+</code></pre>
+
+<h3 id="2-github设置">2. github设置</h3>
+
+<p>在github上建立名字为yourname.github.io的repo，clone到本地库，把public文件夹内容丢到库，最后push到github。</p>
+
+<h3 id="3-域名绑定">3. 域名绑定</h3>
+
+<p>我自己是在万网上注册的域名，现在国内的价格也挺有优势的。至于不想备案什么的顾虑，生活在国内，要找到你，备案不备案完全对事态发展没有任何影响。
+本来在dns的解析直接加上www规则指向yourname.github.io就可以了，但是有啥规定说这个域名在中国没有备案，不能用，宇宙中心的既视感。然后就必须迂回一下，在万网的域名解析加入A类解析，指向github pages的IP地址192.30.252.153和192.30.252.154，然后在github的yourname.github.io的repo目录下，新建CNAME文件，加入注册的域名。这样工作的原理是访问注册域名时，万网的dns服务会指向github pages的IP地址，这个http头上带有你的域名地址，github会根据CNAME里的地址，来指向你自己的repo地址，也就是yourname.github.io。有人尝试过CNAME里面指向已经被他人用过的域名，会收到github的邮件，告诉你这个域名已经被用，让你想别的办法。</p>
+
+<hr />
+
+<p><strong>参考</strong>：</p>
+
+<ol>
+<li><a href="https://help.github.com/categories/github-pages-basics/">github pages文档</a></li>
+<li><a href="https://help.github.com/articles/troubleshooting-custom-domains/">troubleshooting custom domains</a></li>
+<li><a href="https://gohugo.io/overview/quickstart/">hugo文档</a></li>
+<li><a href="http://themes.gohugo.io/hugo-lithium-theme/">hugo theme: lithium theme</a></li>
+<li><a href="https://golang.org/pkg/text/template/">golang template文档</a></li>
+</ol>
+
+    </div>
+  </article>
+
+  
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="http://www.huying42.com/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="http://www.huying42.com/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

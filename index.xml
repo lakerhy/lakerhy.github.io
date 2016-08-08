@@ -1,19 +1,106 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title> on Hello World </title>
+    <title>HUYING42</title>
     <link>http://www.huying42.com/</link>
-    <language>en-us</language>
-    <author>Alexander Ivanov</author>
-    <updated>2016-08-03 09:28:32 &#43;0800 CST</updated>
+    <description>Recent content on HUYING42</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 05 Aug 2016 13:45:24 +0800</lastBuildDate>
+    <atom:link href="http://www.huying42.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>good to great</title>
-      <link>http://www.huying42.com/post/good-to-great/</link>
-      <pubDate>Wed, 03 Aug 2016 09:28:32 CST</pubDate>
-      <author>Alexander Ivanov</author>
-      <guid>http://www.huying42.com/post/good-to-great/</guid>
-      <description>&lt;p&gt;I read &lt;strong&gt;Good to Great in January 2016&lt;/strong&gt;. An awesome read sharing detailed analysis on how good companies became great.&lt;/p&gt;
+      <title>Hugo On github</title>
+      <link>http://www.huying42.com/2016/08/05/hugo-on-github/</link>
+      <pubDate>Fri, 05 Aug 2016 13:45:24 +0800</pubDate>
+      
+      <guid>http://www.huying42.com/2016/08/05/hugo-on-github/</guid>
+      <description>
+
+&lt;h2 id=&#34;在github上用hugo搭建静态博客&#34;&gt;在github上用Hugo搭建静态博客&lt;/h2&gt;
+
+&lt;p&gt;在github pages上放置静态blog有很多好处，免费、采用git更新、使用人多。github官方文档上用jekyll搭建静态网页举例，gem那套有点烦，近喜golang，采用了Hugo+github的方式搭建这个blog。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-使用hugo产生静态网页&#34;&gt;1. 使用hugo产生静态网页&lt;/h3&gt;
+
+&lt;p&gt;用了两天的hugo，比较对我的使用习惯，golang的template很容易上手，尤其棒的一点是可以live editing，改了配置，更新了内容hugo都可以自动更新输出。&lt;/p&gt;
+
+&lt;p&gt;Hugo的文档有点不一样。很多开源项目为了展示简单易用，在quickstart里面的惯用伎俩就是放命令行，越简单越牛逼，enter，铛铛当，a new world。 看Hugo文档写的，先放一个命令，有效果没，咦，没有，看下一个命令，咦，还没有，再看下一个，不知不觉我仔细看完了整个文档。这种丢包袱的文档写法简直为读者所不齿，不过我下次写文档，也要这么写。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/releases/&#34;&gt;Hugo的安装包&lt;/a&gt;基本覆盖了全平台。&lt;/p&gt;
+
+&lt;p&gt;使用流程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# hugo new site blog           //建立hugo项目目录结构
+# hugo new content\post.md     //建立post。一定要从hugo命令行这里建立新的post，我尝试直接在content目录下建立post.md，时间显示混乱。
+# hugo new server              //这之前要装好theme，在configure.toml里指明theme，否则使用hugo new server -t theme-name
+# hugo                         //产生public目录
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-github设置&#34;&gt;2. github设置&lt;/h3&gt;
+
+&lt;p&gt;在github上建立名字为yourname.github.io的repo，clone到本地库，把public文件夹内容丢到库，最后push到github。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-域名绑定&#34;&gt;3. 域名绑定&lt;/h3&gt;
+
+&lt;p&gt;我自己是在万网上注册的域名，现在国内的价格也挺有优势的。至于不想备案什么的顾虑，生活在国内，要找到你，备案不备案完全对事态发展没有任何影响。
+本来在dns的解析直接加上www规则指向yourname.github.io就可以了，但是有啥规定说这个域名在中国没有备案，不能用，宇宙中心的既视感。然后就必须迂回一下，在万网的域名解析加入A类解析，指向github pages的IP地址192.30.252.153和192.30.252.154，然后在github的yourname.github.io的repo目录下，新建CNAME文件，加入注册的域名。这样工作的原理是访问注册域名时，万网的dns服务会指向github pages的IP地址，这个http头上带有你的域名地址，github会根据CNAME里的地址，来指向你自己的repo地址，也就是yourname.github.io。有人尝试过CNAME里面指向已经被他人用过的域名，会收到github的邮件，告诉你这个域名已经被用，让你想别的办法。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.github.com/categories/github-pages-basics/&#34;&gt;github pages文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.github.com/articles/troubleshooting-custom-domains/&#34;&gt;troubleshooting custom domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;hugo文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://themes.gohugo.io/hugo-lithium-theme/&#34;&gt;hugo theme: lithium theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/text/template/&#34;&gt;golang template文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Preface</title>
+      <link>http://www.huying42.com/2016/08/05/preface/</link>
+      <pubDate>Fri, 05 Aug 2016 11:33:08 +0800</pubDate>
+      
+      <guid>http://www.huying42.com/2016/08/05/preface/</guid>
+      <description>&lt;p&gt;在我的青葱年代，曾和一法国小哥做一个DSP的课题，我负责做实验写程序，他负责写报告。每个礼拜我们聚一次，交流下各自的进度。他蛮羞涩的，我每次都看着他的绿眼睛扑闪扑闪，一下午就咻地过去了，我在说什么啊，我要说的是，最后交报告的时候，他拿出来的报告把我惊了，全部彩打，页首还奉上傅里叶的名言，报告写的连贯，方法清晰，结论明确，基本上flawless，最后我们也是拿了很高的分数。之前我的想法是，这种才能固然值得羡慕，但对于我来说是不必须的，因为基本上我是耽于self satisfation的类型，什么东西弄过一遍，走了过程就满足了。但是现在随着年龄的增长，手头的事情越来越杂，我对自己的记忆力差有了充分的自信，而与之形成对比的是时间越来越碎片化。很多时候，出现了这种情况，花了时间和精力搞定一件事情，然后去处理另外一件事，回头来，我已经不记得我上次做到什么程度了，转火快了回不来。&lt;/p&gt;
+
+&lt;p&gt;由此就产生了对所做的感兴趣的事情做个记录的想法，希望这些记录能够作为碎片化时间的粘合剂。我是做不到法国小哥那种程度的，但是尽可能达到两个目标，清晰和明确。&lt;/p&gt;
+
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>contact</title>
+      <link>http://www.huying42.com/contact/</link>
+      <pubDate>Thu, 04 Aug 2016 15:47:22 +0800</pubDate>
+      
+      <guid>http://www.huying42.com/contact/</guid>
+      <description>&lt;p&gt;Email: huying_42@163.com&lt;huying_42@163.com&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://www.huying42.com/about/</link>
+      <pubDate>Thu, 04 Aug 2016 09:44:13 +0800</pubDate>
+      
+      <guid>http://www.huying42.com/about/</guid>
+      <description>&lt;p&gt;我是一个电子攻城狮。&lt;/p&gt;
+
+&lt;p&gt;创新于各种器件的损坏。&lt;/p&gt;
+
+&lt;p&gt;精通于各种datasheet的打印。&lt;/p&gt;
+
+&lt;p&gt;熟练于各种EDA软件的装卸。&lt;/p&gt;
+
+&lt;p&gt;擅长于各种多种编程语言的拼写。&lt;/p&gt;
+
+&lt;p&gt;爱好于各种作古仪器的高买低卖。&lt;/p&gt;
 </description>
     </item>
     

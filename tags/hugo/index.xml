@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on HUYING42</title>
-    <link>http://www.huying42.com/post/</link>
-    <description>Recent content in Posts on HUYING42</description>
+    <title>Hugo on HUYING42</title>
+    <link>http://www.huying42.com/tags/hugo/</link>
+    <description>Recent content in Hugo on HUYING42</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 05 Aug 2016 13:45:24 +0800</lastBuildDate>
-    <atom:link href="http://www.huying42.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.huying42.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hugo On github</title>
@@ -57,20 +57,6 @@
 &lt;li&gt;&lt;a href=&#34;http://themes.gohugo.io/hugo-lithium-theme/&#34;&gt;hugo theme: lithium theme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/text/template/&#34;&gt;golang template文档&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Preface</title>
-      <link>http://www.huying42.com/2016/08/05/preface/</link>
-      <pubDate>Fri, 05 Aug 2016 11:33:08 +0800</pubDate>
-      
-      <guid>http://www.huying42.com/2016/08/05/preface/</guid>
-      <description>&lt;p&gt;在我的青葱年代，曾和一法国小哥做一个DSP的课题，我负责做实验写程序，他负责写报告。每个礼拜我们聚一次，交流下各自的进度。他蛮羞涩的，我每次都看着他的绿眼睛扑闪扑闪，一下午就咻地过去了，我在说什么啊，我要说的是，最后交报告的时候，他拿出来的报告把我惊了，全部彩打，页首还奉上傅里叶的名言，报告写的连贯，方法清晰，结论明确，基本上flawless，最后我们也是拿了很高的分数。之前我的想法是，这种才能固然值得羡慕，但对于我来说是不必须的，因为基本上我是耽于self satisfation的类型，什么东西弄过一遍，走了过程就满足了。但是现在随着年龄的增长，手头的事情越来越杂，我对自己的记忆力差有了充分的自信，而与之形成对比的是时间越来越碎片化。很多时候，出现了这种情况，花了时间和精力搞定一件事情，然后去处理另外一件事，回头来，我已经不记得我上次做到什么程度了，转火快了回不来。&lt;/p&gt;
-
-&lt;p&gt;由此就产生了对所做的感兴趣的事情做个记录的想法，希望这些记录能够作为碎片化时间的粘合剂。我是做不到法国小哥那种程度的，但是尽可能达到两个目标，清晰和明确。&lt;/p&gt;
-
-&lt;p&gt;以上。&lt;/p&gt;
 </description>
     </item>
     
